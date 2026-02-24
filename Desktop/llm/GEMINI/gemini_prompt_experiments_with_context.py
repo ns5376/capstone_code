@@ -21,6 +21,8 @@ from shared.prompts import (
     build_cluster_examples,
     build_zero_shot_prompt,
     build_example_prompt,
+    build_zero_shot_prompt_no_context,
+    build_example_prompt_no_context,
 )
 
 # Point shared gloss at Word Lists.xlsx (parent of GEMINI folder)
@@ -494,16 +496,25 @@ def run_no_context_experiments(sample_size: int = 100) -> Dict[str, List[str]]:
 
     def build_no_context_experiments(dataset_label: str, cluster_examples: Dict[str, Dict[str, object]], all_examples: List[Dict[str, str]]):
         experiments: List[Dict[str, object]] = [
-            {"experiment_id": f"no_context_zero_shot_{dataset_label}", "prompt_builder": build_zero_shot_prompt},
+            {
+                "experiment_id": f"no_context_zero_shot_{dataset_label}",
+                "prompt_builder": build_zero_shot_prompt_no_context,
+            },
         ]
         for slug, cluster_info in cluster_examples.items():
             experiments.append({
                 "experiment_id": f"no_context_{slug}_{dataset_label}",
-                "prompt_builder": build_example_prompt(cluster_info["examples"], include_gloss_in_current_query=True),
+                "prompt_builder": build_example_prompt_no_context(
+                    cluster_info["examples"],
+                    include_gloss_in_current_query=True,
+                ),
             })
         experiments.append({
             "experiment_id": f"no_context_all_examples_{dataset_label}",
-            "prompt_builder": build_example_prompt(all_examples, include_gloss_in_current_query=True),
+            "prompt_builder": build_example_prompt_no_context(
+                all_examples,
+                include_gloss_in_current_query=True,
+            ),
         })
         return experiments
 

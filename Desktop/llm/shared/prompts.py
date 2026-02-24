@@ -40,6 +40,31 @@ EXAMPLE_PROMPT_TEMPLATE = (
     "Each word must be unique. Write only 10 words, numbered 1 to 10, with no explanations or diacritics."
 )
 
+# No-context templates: do NOT mention user metadata (native language, proficiency) at all.
+ZERO_SHOT_PROMPT_TEMPLATE_NO_CONTEXT = (
+    "You are a linguist with expertise in Arabic pronunciation and transcription. "
+    "You will analyze user transcriptions of Arabic words.\n\n"
+    "Given the following user transcription, which may be correct or wrong, predict the intended Arabic word.\n\n"
+    "User transcription: {transcription}\n\n"
+    "Script: {script}\n\n"
+    "{gloss_line}"
+    "Return exactly 10 different possible Arabic words, without any short vowels from most likely to least likely.\n\n"
+    "Each word must be unique. Write only 10 words, numbered 1 to 10, with no explanations or diacritics."
+)
+
+EXAMPLE_PROMPT_TEMPLATE_NO_CONTEXT = (
+    "You are a linguist with expertise in Arabic pronunciation and transcription.\n\n"
+    "You will be given examples of user transcriptions of Arabic words, the script they typed in, and the correct words.\n\n"
+    "Examples:\n"
+    "{examples_text}\n\n"
+    "Now, given the following user transcription, which may be correct or wrong, predict the intended Arabic word.\n\n"
+    "User transcription: {transcription}\n\n"
+    "Script: {script}\n\n"
+    "{gloss_line}"
+    "Return exactly 10 different possible Arabic words, without any short vowels from most likely to least likely.\n\n"
+    "Each word must be unique. Write only 10 words, numbered 1 to 10, with no explanations or diacritics."
+)
+
 
 def load_examples(path: str) -> List[Dict]:
     """Load JSON list of example entries from path."""
@@ -156,3 +181,69 @@ def build_example_prompt(
         )
 
     return _builder
+
+
+def build_zero_shot_prompt_no_context(
+    transcription: str,
+    script: str,
+    native_language: str,
+    proficiency: str,
+    gloss: Optional[str] = None,
+) -> str:
+    """
+    Zero-shot builder for NO-CONTEXT experiments.
+    Signature matches the context version but ignores native_language/proficiency
+    and uses a template with no user metadata lines at all.
+    """
+    return ZERO_SHOT_PROMPT_TEMPLATE_NO_CONTEXT.format(
+        transcription=transcription,
+        script=script,
+        gloss_line=_gloss_line(gloss),
+    )
+
+
+def build_example_prompt_no_context(
+    examples: List[Dict[str, str]],
+    include_gloss_in_current_query: bool = False,
+) -> Callable[..., str]:
+    """
+    Few-shot builder for NO-CONTEXT experiments.
+    Does not include native language or proficiency in examples or in the
+    current-query part of the prompt, but keeps the same call signature so
+    runners can pass (transcription, script, native_language, proficiency, gloss).
+    """
+
+    def format_example_no_ctx(ex: Dict[str, str]) -> str:
+        true_word = ex["true_word"]
+        gloss_text = ""
+        if ex.get("gloss"):
+            meaning = strip_pos_from_gloss(ex["gloss"])
+            if meaning:
+                gloss_text = f" The word means: {meaning}"
+        return (
+            "Transcription: {transcription} | Script: {script}{gloss_text} → True word: {true_word}"
+        ).format(
+            transcription=ex["transcription"],
+            script=ex["script"],
+            gloss_text=gloss_text,
+            true_word=true_word,
+        )
+
+    examples_text = "\n".join(format_example_no_ctx(ex) for ex in examples)
+
+    def _builder_no_ctx(
+        transcription: str,
+        script: str,
+        native_language: str,
+        proficiency: str,
+        gloss: Optional[str] = None,
+    ) -> str:
+        gloss_line = _gloss_line(gloss) if include_gloss_in_current_query else ""
+        return EXAMPLE_PROMPT_TEMPLATE_NO_CONTEXT.format(
+            examples_text=examples_text,
+            transcription=transcription,
+            script=script,
+            gloss_line=gloss_line,
+        )
+
+    return _builder_no_ctx

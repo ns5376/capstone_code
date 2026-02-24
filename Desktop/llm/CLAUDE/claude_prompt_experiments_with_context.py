@@ -24,6 +24,8 @@ from shared.prompts import (
     build_cluster_examples,
     build_zero_shot_prompt,
     build_example_prompt,
+    build_zero_shot_prompt_no_context,
+    build_example_prompt_no_context,
 )
 
 set_word_list_path(os.path.join(PARENT_DIR, "Word Lists.xlsx"))
@@ -385,7 +387,7 @@ def run_no_context_experiments(sample_size: int = 100) -> None:
         experiments.append(
             {
                 "experiment_id": f"no_context_zero_shot_{dataset_label}",
-                "prompt_builder": build_zero_shot_prompt,
+                "prompt_builder": build_zero_shot_prompt_no_context,
             }
         )
 
@@ -394,7 +396,10 @@ def run_no_context_experiments(sample_size: int = 100) -> None:
             experiments.append(
                 {
                     "experiment_id": f"no_context_{slug}_{dataset_label}",
-                    "prompt_builder": build_example_prompt(cluster_info["examples"], include_gloss_in_current_query=True),
+                    "prompt_builder": build_example_prompt_no_context(
+                        cluster_info["examples"],
+                        include_gloss_in_current_query=True,
+                    ),
                 }
             )
 
@@ -402,7 +407,10 @@ def run_no_context_experiments(sample_size: int = 100) -> None:
         experiments.append(
             {
                 "experiment_id": f"no_context_all_examples_{dataset_label}",
-                "prompt_builder": build_example_prompt(all_examples, include_gloss_in_current_query=True),
+                "prompt_builder": build_example_prompt_no_context(
+                    all_examples,
+                    include_gloss_in_current_query=True,
+                ),
             }
         )
 

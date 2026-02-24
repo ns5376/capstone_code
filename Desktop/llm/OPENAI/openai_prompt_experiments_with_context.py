@@ -33,6 +33,8 @@ from shared.prompts import (
     build_cluster_examples,
     build_zero_shot_prompt,
     build_example_prompt,
+    build_zero_shot_prompt_no_context,
+    build_example_prompt_no_context,
 )
 
 set_word_list_path(os.path.join(PARENT_DIR, "Word Lists.xlsx"))
@@ -292,8 +294,11 @@ class OpenAINoContextPromptTester(OpenAIArabicTop10Tester):
 
     def make_prompt(self, transcription: str, script: str, native_language: str, proficiency: str, gloss: str | None) -> str:
         script_value = normalize_script(script)
-        native_language_value = normalize_text(native_language) or "Unknown"
-        proficiency_value = normalize_proficiency(proficiency)
+        # NO-CONTEXT: do not pass user metadata (native language, proficiency) into the prompt.
+        # We still provide placeholder values so the shared templates render correctly, but
+        # they no longer reflect the actual user-level fields from the dataset.
+        native_language_value = "Unknown"
+        proficiency_value = "Unknown"
         gloss_str = (gloss or "").strip() or None
         return self.prompt_builder(
             transcription, script_value, native_language_value, proficiency_value, gloss_str
@@ -354,20 +359,26 @@ def build_no_context_experiments_for_dataset(
     cluster_examples: Dict[str, Dict[str, object]],
     all_examples: List[Dict[str, str]],
 ) -> List[Dict[str, object]]:
-    """Same prompt builders as context (shared prompts), like CLAUDE."""
+    """Prompt builders that exclude user metadata from the prompt text."""
     experiments: List[Dict[str, object]] = []
     zero_id = "zero_shot" if dataset_label == "arabic" else "no_context_zero_shot_english"
     all_id = "all_examples" if dataset_label == "arabic" else "no_context_all_examples_english"
-    experiments.append({"experiment_id": zero_id, "prompt_builder": build_zero_shot_prompt})
+    experiments.append({"experiment_id": zero_id, "prompt_builder": build_zero_shot_prompt_no_context})
     for slug, cluster_info in cluster_examples.items():
         exp_id = slug if dataset_label == "arabic" else f"no_context_{slug}_english"
         experiments.append({
             "experiment_id": exp_id,
-            "prompt_builder": build_example_prompt(cluster_info["examples"], include_gloss_in_current_query=True),
+            "prompt_builder": build_example_prompt_no_context(
+                cluster_info["examples"],
+                include_gloss_in_current_query=True,
+            ),
         })
     experiments.append({
         "experiment_id": all_id,
-        "prompt_builder": build_example_prompt(all_examples, include_gloss_in_current_query=True),
+        "prompt_builder": build_example_prompt_no_context(
+            all_examples,
+            include_gloss_in_current_query=True,
+        ),
     })
     return experiments
 

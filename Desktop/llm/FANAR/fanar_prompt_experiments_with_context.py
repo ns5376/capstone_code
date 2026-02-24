@@ -26,6 +26,8 @@ from shared.prompts import (
     build_cluster_examples,
     build_zero_shot_prompt,
     build_example_prompt,
+    build_zero_shot_prompt_no_context,
+    build_example_prompt_no_context,
 )
 
 set_word_list_path(os.path.join(PARENT_DIR, "Word Lists.xlsx"))
@@ -197,18 +199,27 @@ def build_no_context_experiments_for_dataset(
     cluster_examples: Dict[str, Dict[str, object]],
     all_examples: List[Dict[str, str]],
 ) -> List[Dict[str, object]]:
-    """Same shared prompts as context (like CLAUDE)."""
+    """No-context experiments using builders that exclude user metadata from the prompt text."""
     experiments: List[Dict[str, object]] = [
-        {"experiment_id": f"no_context_zero_shot_{dataset_label}", "prompt_builder": build_zero_shot_prompt},
+        {
+            "experiment_id": f"no_context_zero_shot_{dataset_label}",
+            "prompt_builder": build_zero_shot_prompt_no_context,
+        },
     ]
     for slug, cluster_info in cluster_examples.items():
         experiments.append({
             "experiment_id": f"no_context_{slug}_{dataset_label}",
-            "prompt_builder": build_example_prompt(cluster_info["examples"], include_gloss_in_current_query=True),
+            "prompt_builder": build_example_prompt_no_context(
+                cluster_info["examples"],
+                include_gloss_in_current_query=True,
+            ),
         })
     experiments.append({
         "experiment_id": f"no_context_all_examples_{dataset_label}",
-        "prompt_builder": build_example_prompt(all_examples, include_gloss_in_current_query=True),
+        "prompt_builder": build_example_prompt_no_context(
+            all_examples,
+            include_gloss_in_current_query=True,
+        ),
     })
     return experiments
 
@@ -284,8 +295,11 @@ class FanarPromptExperimentTesterNoContext(FanarArabicTop10Tester):
 
     def make_prompt(self, transcription: str, script: str, native_language: str, proficiency: str, gloss: str | None) -> str:
         script_value = normalize_script(script)
-        native_language_value = normalize_text(native_language) or "Unknown"
-        proficiency_value = normalize_proficiency(proficiency)
+        # NO-CONTEXT: do not pass user metadata (native language, proficiency) into the prompt.
+        # Keep placeholder values so the shared templates render, but they are no longer
+        # tied to the actual user metadata from the dataset.
+        native_language_value = "Unknown"
+        proficiency_value = "Unknown"
         gloss_str = (gloss or "").strip() or None
         return self.prompt_builder(
             transcription, script_value, native_language_value, proficiency_value, gloss_str
