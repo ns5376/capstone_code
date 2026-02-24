@@ -2,397 +2,403 @@
   {
     "word_id": 5,
     "true_word": "أَبَوِيّ",
+    "transcription": "أبوي",
     "user_id": "X7tTUctfjleYqNhxsxUjlIAytrv1",
     "script": "Arabic",
     "proficiency_level": 3,
     "native_language": "English",
     "transcription_id": 105,
     "cluster_id": "cluster_indo_euro_germanic_romance",
-    "cluster": "Indo-European (Germanic & Romance)",
-    "transcriptions": "ابوي, اباويت, أبوي, أبوي, ابوي, أبوي"
+    "cluster": "Indo-European (Germanic & Romance)"
   },
   {
     "word_id": 44,
     "true_word": "إِلْصاق",
+    "transcription": "انساق",
     "user_id": "ixzh0eq0UKPrhqgKTEKMyDjaBdj1",
     "script": "Arabic",
     "proficiency_level": 3,
     "native_language": "Norwegian",
     "transcription_id": 879,
     "cluster_id": "cluster_indo_euro_germanic_romance",
-    "cluster": "Indo-European (Germanic & Romance)",
-    "transcriptions": "انساق, الصاق, إلساق, انساق, إلساق"
+    "cluster": "Indo-European (Germanic & Romance)"
   },
   {
     "word_id": 10,
     "true_word": "أَرَقّ",
+    "transcription": "عرق",
     "user_id": "3b8QgBWODObUoZkkOHnd3TWjzQf2",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "English",
     "transcription_id": 199,
     "cluster_id": "cluster_indo_euro_germanic_romance",
-    "cluster": "Indo-European (Germanic & Romance)",
-    "transcriptions": "عرق, ارق, عرق, أرق, ارق, أرق"
+    "cluster": "Indo-European (Germanic & Romance)"
   },
   {
     "word_id": 90,
     "true_word": "باسُور",
+    "transcription": "بعصور",
     "user_id": "N93fWkm2CzcotDG1qDjrX4bsMFx2",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Spanish",
     "transcription_id": 1804,
     "cluster_id": "cluster_indo_euro_germanic_romance",
-    "cluster": "Indo-European (Germanic & Romance)",
-    "transcriptions": "باسور, بعصور, بعصور, بصور, باسور, باسور"
+    "cluster": "Indo-European (Germanic & Romance)"
   },
   {
     "word_id": 9,
     "true_word": "أَذْكار",
+    "transcription": "أذكار",
     "user_id": "r2bkl9BHYSh4AzcPGuwSi21rDWC2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Romanian",
     "transcription_id": 186,
     "cluster_id": "cluster_indo_euro_germanic_romance",
-    "cluster": "Indo-European (Germanic & Romance)",
-    "transcriptions": "دكترة, اظكر, أظقر, اذكار, ادكال, ابوكار, أذكار"
+    "cluster": "Indo-European (Germanic & Romance)"
   },
+
   {
     "word_id": 14,
     "true_word": "أَشْدَق",
+    "transcription": "اشتق",
     "user_id": "P24SY11mpCMuVMHHaxRQs6vXywy1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Czech",
     "transcription_id": 282,
     "cluster_id": "cluster_indo_euro_slavic",
-    "cluster": "Indo-European (Slavic & Related)",
-    "transcriptions": "اشدق, أشدف, اشتق, أشقق, اشضق, أشرك"
+    "cluster": "Indo-European (Slavic & Related)"
   },
   {
     "word_id": 171,
     "true_word": "تَهالَك",
+    "transcription": "تهللك",
     "user_id": "P24SY11mpCMuVMHHaxRQs6vXywy1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Czech",
     "transcription_id": 3422,
     "cluster_id": "cluster_indo_euro_slavic",
-    "cluster": "Indo-European (Slavic & Related)",
-    "transcriptions": "تهالك, تحالق, تهالك, تهللك, تحالك, تاحالك"
+    "cluster": "Indo-European (Slavic & Related)"
   },
   {
     "word_id": 59,
     "true_word": "اِسْتَكْبَر",
+    "transcription": "استكبر",
     "user_id": "P24SY11mpCMuVMHHaxRQs6vXywy1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Czech",
     "transcription_id": 1172,
     "cluster_id": "cluster_indo_euro_slavic",
-    "cluster": "Indo-European (Slavic & Related)",
-    "transcriptions": "اسطكبر, استكبر, استكبر, استقبل, إستكبر, إستكبر"
+    "cluster": "Indo-European (Slavic & Related)"
   },
   {
     "word_id": 1,
     "true_word": "آسِي",
+    "transcription": "اعسي",
     "user_id": "P24SY11mpCMuVMHHaxRQs6vXywy1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Czech",
     "transcription_id": 21,
     "cluster_id": "cluster_indo_euro_slavic",
-    "cluster": "Indo-European (Slavic & Related)",
-    "transcriptions": "آسي, عسي, آسي, اعسي, آسي, أسي, آس"
+    "cluster": "Indo-European (Slavic & Related)"
   },
   {
     "word_id": 24,
     "true_word": "أَنْجلَزَة",
+    "transcription": "اعنجلزة",
     "user_id": "P24SY11mpCMuVMHHaxRQs6vXywy1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Czech",
     "transcription_id": 478,
     "cluster_id": "cluster_indo_euro_slavic",
-    "cluster": "Indo-European (Slavic & Related)",
-    "transcriptions": "عنجلزة, انقلز, انجرزة, اعنجلزة, انجلسة, أنجلز"
+    "cluster": "Indo-European (Slavic & Related)"
   },
+
   {
     "word_id": 136,
     "true_word": "تَشَبَّع",
+    "transcription": "تشبع",
     "user_id": "2lSg7qDaeyNaIpig17JKSu0DvKf1",
     "script": "Arabic",
     "proficiency_level": 3,
     "native_language": "Persian (Farsi)",
     "transcription_id": 2718,
     "cluster_id": "cluster_indo_iranian",
-    "cluster": "Indo-European (Indo-Iranian)",
-    "transcriptions": ""
+    "cluster": "Indo-European (Indo-Iranian)"
   },
   {
     "word_id": 222,
     "true_word": "راء",
+    "transcription": "راع",
     "user_id": "2lSg7qDaeyNaIpig17JKSu0DvKf1",
     "script": "Arabic",
     "proficiency_level": 3,
     "native_language": "Persian (Farsi)",
     "transcription_id": 4431,
     "cluster_id": "cluster_indo_iranian",
-    "cluster": "Indo-European (Indo-Iranian)",
-    "transcriptions": "راع, ر, براء, راء, راء, برأ, داء, راء"
+    "cluster": "Indo-European (Indo-Iranian)"
   },
   {
     "word_id": 454,
     "true_word": "مِكَبَّة",
+    "transcription": "مكبة",
     "user_id": "2lSg7qDaeyNaIpig17JKSu0DvKf1",
     "script": "Arabic",
     "proficiency_level": 3,
     "native_language": "Persian (Farsi)",
     "transcription_id": 9031,
     "cluster_id": "cluster_indo_iranian",
-    "cluster": "Indo-European (Indo-Iranian)",
-    "transcriptions": ""
+    "cluster": "Indo-European (Indo-Iranian)"
   },
+
   {
     "word_id": 65,
     "true_word": "اِشْتَمَل",
+    "transcription": "إشتمل",
     "user_id": "TwQbNF3F3cafaUiFKfg4bPyWn0j1",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Amharic",
     "transcription_id": 1291,
     "cluster_id": "cluster_afro_asiatic",
-    "cluster": "Afro-Asiatic (Semitic)",
-    "transcriptions": "اشتمعل, إشتمر, إشتمل, شتامل, شتمل, شتمل"
+    "cluster": "Afro-Asiatic (Semitic)"
   },
   {
     "word_id": 56,
     "true_word": "اِسْتَدْفَع",
+    "transcription": "استدفع",
     "user_id": "2TcxLEOTBKYAURXoKZPIkDQnipE2",
     "script": "Arabic",
     "proficiency_level": 5,
     "native_language": "Arabic",
     "transcription_id": 1110,
     "cluster_id": "cluster_afro_asiatic",
-    "cluster": "Afro-Asiatic (Semitic)",
-    "transcriptions": "استدفع, استدفع, ستتفع, سدتفع, ستهة, ستيتفع"
+    "cluster": "Afro-Asiatic (Semitic)"
   },
   {
     "word_id": 171,
     "true_word": "تَهالَك",
+    "transcription": "تهالك",
     "user_id": "3tCpPOYPsCUdicDjBYJxW9vGfgj2",
     "script": "Arabic",
     "proficiency_level": 5,
     "native_language": "Arabic",
     "transcription_id": 3419,
     "cluster_id": "cluster_afro_asiatic",
-    "cluster": "Afro-Asiatic (Semitic)",
-    "transcriptions": "تهالك, تحالق, تهالك, تهللك, تحالك, تاحالك"
+    "cluster": "Afro-Asiatic (Semitic)"
   },
   {
     "word_id": 241,
     "true_word": "زَهِيد",
+    "transcription": "زهيد",
     "user_id": "0nGiVljOjHSAnhHpH19KT2t8IXy1",
     "script": "Arabic",
     "proficiency_level": 5,
     "native_language": "Arabic",
     "transcription_id": 4799,
     "cluster_id": "cluster_afro_asiatic",
-    "cluster": "Afro-Asiatic (Semitic)",
-    "transcriptions": "زهيد, زهيد, زحيد, زهيد, زهيد, زهيد, ساحيد"
+    "cluster": "Afro-Asiatic (Semitic)"
   },
   {
     "word_id": 222,
     "true_word": "راء",
+    "transcription": "راء",
     "user_id": "wY9nLxfvecNw99lS9Wx0pT9YLcj1",
     "script": "Arabic",
     "proficiency_level": 5,
     "native_language": "Arabic",
     "transcription_id": 4438,
     "cluster_id": "cluster_afro_asiatic",
-    "cluster": "Afro-Asiatic (Semitic)",
-    "transcriptions": "راع, ر, براء, راء, راء, برأ, داء, راء"
+    "cluster": "Afro-Asiatic (Semitic)"
   },
+
   {
     "word_id": 50,
     "true_word": "اِحْتِدام",
+    "transcription": "أتجم",
     "user_id": "7ufW8HufEvZWeL4UF3c8ZMdVL8x1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Shona",
     "transcription_id": 994,
     "cluster_id": "cluster_niger_congo",
-    "cluster": "Niger-Congo",
-    "transcriptions": "احتدام, إحتدام, أتجم, احتدم, احتدام, احتدم, اهتيدام, إحتيدن"
+    "cluster": "Niger-Congo"
   },
   {
     "word_id": 222,
     "true_word": "راء",
+    "transcription": "براء",
     "user_id": "7ufW8HufEvZWeL4UF3c8ZMdVL8x1",
     "script": "",
     "proficiency_level": 1,
     "native_language": "Shona",
     "transcription_id": 4433,
     "cluster_id": "cluster_niger_congo",
-    "cluster": "Niger-Congo",
-    "transcriptions": "راع, ر, براء, راء, راء, برأ, داء, راء"
+    "cluster": "Niger-Congo"
   },
   {
     "word_id": 178,
     "true_word": "جاحِد",
+    "transcription": "جاحد",
     "user_id": "nMeMaYxhlwXlm4FWvHQt7Kaakr82",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Wolof",
     "transcription_id": 3561,
     "cluster_id": "cluster_niger_congo",
-    "cluster": "Niger-Congo",
-    "transcriptions": "جاحد, جاحد, جاهد, جحد, جاحد, جاحد"
+    "cluster": "Niger-Congo"
   },
   {
     "word_id": 97,
     "true_word": "بَطْرَكْخانَة",
+    "transcription": "بترقهانة",
     "user_id": "nMeMaYxhlwXlm4FWvHQt7Kaakr82",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Wolof",
     "transcription_id": 1947,
     "cluster_id": "cluster_niger_congo",
-    "cluster": "Niger-Congo",
-    "transcriptions": "بتركحالة, بطرقخانة, باتركخانة, بترقحنا, بتركعنة, بترقهانة"
+    "cluster": "Niger-Congo"
   },
   {
     "word_id": 53,
     "true_word": "اِرْتَعَش",
+    "transcription": "إرتعش",
     "user_id": "nMeMaYxhlwXlm4FWvHQt7Kaakr82",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Wolof",
     "transcription_id": 1053,
     "cluster_id": "cluster_niger_congo",
-    "cluster": "Niger-Congo",
-    "transcriptions": "ارتش, التعاش, إرطاش, أرتش, إرتعش, ىرتاعش, ارتعش"
+    "cluster": "Niger-Congo"
   },
+
   {
     "word_id": 0,
     "true_word": "آثارِيّ",
+    "transcription": "اثريع",
     "user_id": "5HM1VvkUlabbK1p4yE5eKaEB7XP2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Chinese",
     "transcription_id": 2,
     "cluster_id": "cluster_east_asian",
-    "cluster": "East Asian (Sino-Tibetan & Related)",
-    "transcriptions": "اثري, اثاري, اثريع, ادري, اشريح, كاثاري"
+    "cluster": "East Asian (Sino-Tibetan & Related)"
   },
   {
     "word_id": 8,
     "true_word": "أَدَلّ",
+    "transcription": "أدال",
     "user_id": "JCZBRuBzVlTMICdtlmlhjuq4g4g2",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Chinese",
     "transcription_id": 163,
     "cluster_id": "cluster_east_asian",
-    "cluster": "East Asian (Sino-Tibetan & Related)",
-    "transcriptions": "الظل, ادل, أدال, ادال, ادل"
+    "cluster": "East Asian (Sino-Tibetan & Related)"
   },
   {
     "word_id": 37,
     "true_word": "إِرْهابِيّ",
+    "transcription": "عرهبي",
     "user_id": "Pi40HzE66kMgAnFkWRDQRAOgiUi1",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Chinese",
     "transcription_id": 741,
     "cluster_id": "cluster_east_asian",
-    "cluster": "East Asian (Sino-Tibetan & Related)",
-    "transcriptions": "ارهابي, أرهبي, ارحبي, عرهبي, إرهابي, أرهبي"
+    "cluster": "East Asian (Sino-Tibetan & Related)"
   },
   {
     "word_id": 47,
     "true_word": "اِجْتِثاث",
+    "transcription": "يجدفا",
     "user_id": "m44Q5JmPHfhZEm8jjytZWYQVByr2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Japanese",
     "transcription_id": 937,
     "cluster_id": "cluster_east_asian",
-    "cluster": "East Asian (Sino-Tibetan & Related)",
-    "transcriptions": "ازدفف, اجتفازة, أشتفف, اشتفاف, يجدفا, اشدفاف"
+    "cluster": "East Asian (Sino-Tibetan & Related)"
   },
   {
     "word_id": 234,
     "true_word": "زامَل",
+    "transcription": "جامر",
     "user_id": "m44Q5JmPHfhZEm8jjytZWYQVByr2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Japanese",
     "transcription_id": 4667,
     "cluster_id": "cluster_east_asian",
-    "cluster": "East Asian (Sino-Tibetan & Related)",
-    "transcriptions": "جامل, زمن, جميل, زامل, جامر, جامل, جامل"
+    "cluster": "East Asian (Sino-Tibetan & Related)"
   },
+
   {
     "word_id": 2,
     "true_word": "آصِرَة",
+    "transcription": "عاصرة",
     "user_id": "6INXhpXg6PMrc1X6DUP6g6po7M12",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Hungarian",
     "transcription_id": 41,
     "cluster_id": "cluster_uralic_turkic",
-    "cluster": "Uralic/Turkic",
-    "transcriptions": "اثر, عثلة, عاصرة, أسيرة, اسرة, عيرة, آسرة, أصيرة, عسرة"
+    "cluster": "Uralic/Turkic"
   },
   {
     "word_id": 6,
     "true_word": "أَخْصَب",
+    "transcription": "أخصب",
     "user_id": "50F5dwtdddhH54cCjarRp43Korp2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Hungarian",
     "transcription_id": 122,
     "cluster_id": "cluster_uralic_turkic",
-    "cluster": "Uralic/Turkic",
-    "transcriptions": "اغصب, أخصب, احصب, أجطب, احصب, أخيب"
+    "cluster": "Uralic/Turkic"
   },
   {
     "word_id": 39,
     "true_word": "إِشْراقِيّ",
+    "transcription": "اشرقي",
     "user_id": "wgVwGL41WHYFTybDA4AWlZTCrns1",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Hungarian",
     "transcription_id": 783,
     "cluster_id": "cluster_uralic_turkic",
-    "cluster": "Uralic/Turkic",
-    "transcriptions": "إشراقي, اشراقي, اشراقي, إشراقي, اشرفي, اشرقي"
+    "cluster": "Uralic/Turkic"
   },
   {
     "word_id": 22,
     "true_word": "أَنِيمِيّ",
+    "transcription": "انيمي",
     "user_id": "66Mtp85SOJbXbzqerjYxSrB8slF2",
     "script": "Arabic",
     "proficiency_level": 1,
     "native_language": "Hungarian",
     "transcription_id": 439,
     "cluster_id": "cluster_uralic_turkic",
-    "cluster": "Uralic/Turkic",
-    "transcriptions": "انيمي, انيمي, انيميي, انيمين, انيمي, أنيمي, أنيمي, أنيمي"
+    "cluster": "Uralic/Turkic"
   },
   {
     "word_id": 38,
     "true_word": "إِسْطَبْل",
+    "transcription": "اسطب",
     "user_id": "6INXhpXg6PMrc1X6DUP6g6po7M12",
     "script": "Arabic",
     "proficiency_level": 2,
     "native_language": "Hungarian",
     "transcription_id": 760,
     "cluster_id": "cluster_uralic_turkic",
-    "cluster": "Uralic/Turkic",
-    "transcriptions": "اسطبل, اسطبل, اصطبج, اسطب, استبش, استبي, استب, استابيش, استابيش"
+    "cluster": "Uralic/Turkic"
   }
 ]
