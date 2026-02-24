@@ -1,0 +1,12 @@
+# Core (all systems)
+pandas>=1.5.0
+openpyxl>=3.0.0
+requests>=2.28.0
+
+# API clients (install only for the systems you run)
+openai>=1.0.0
+anthropic>=0.18.0
+google-generativeai>=0.3.0
+
+# Optional: load API keys from .env
+python-dotenv>=1.0.0
