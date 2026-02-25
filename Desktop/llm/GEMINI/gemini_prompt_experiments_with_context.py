@@ -565,12 +565,16 @@ if __name__ == "__main__":
     run_no_context_experiments(sample_size=SAMPLE_SIZE)
     run_with_context_experiments(sample_size=SAMPLE_SIZE)
 
-    # Pass 2: WITHOUT GLOSS
+    # Pass 2: WITHOUT GLOSS (suppress gloss everywhere: shared.gloss + local binding)
     def _no_gloss(_true_word: str) -> dict:
         return {}
 
-    _orig_get = get_lemma_and_gloss
+    import shared.gloss as _shared_gloss  # type: ignore[import]
+
+    _orig_local_get = get_lemma_and_gloss
+    _orig_shared_get = _shared_gloss.get_lemma_and_gloss
     globals()["get_lemma_and_gloss"] = _no_gloss
+    _shared_gloss.get_lemma_and_gloss = _no_gloss
     try:
         print("\n" + "=" * 80)
         print("GEMINI: WITHOUT GLOSS (no-context + context, full test set)")
@@ -578,5 +582,6 @@ if __name__ == "__main__":
         run_no_context_experiments(sample_size=SAMPLE_SIZE)
         run_with_context_experiments(sample_size=SAMPLE_SIZE)
     finally:
-        globals()["get_lemma_and_gloss"] = _orig_get
+        globals()["get_lemma_and_gloss"] = _orig_local_get
+        _shared_gloss.get_lemma_and_gloss = _orig_shared_get
 

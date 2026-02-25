@@ -142,9 +142,11 @@ class PromptExperimentTesterWithContext(ClaudeArabicTop10Tester):
     def save_results(self, results: List[Dict[str, object]], dataset_label: str):
         df = pd.DataFrame(results)
         
-        # Add normalized column (use shared normalization)
+        # Add normalized columns (use shared normalization)
         if 'true_word' in df.columns:
             df['true_word_normalized'] = df['true_word'].apply(normalize_arabic_fn)
+        if 'prediction' in df.columns:
+            df['prediction_normalized'] = df['prediction'].apply(normalize_arabic_fn)
         
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
@@ -246,9 +248,11 @@ class PromptExperimentTesterUnified(PromptExperimentTesterWithContext):
     def save_results(self, results: List[Dict[str, object]], dataset_label: str):
         df = pd.DataFrame(results)
 
-        # Add normalized column (use shared normalization)
+        # Add normalized columns (use shared normalization)
         if "true_word" in df.columns:
             df["true_word_normalized"] = df["true_word"].apply(normalize_arabic_fn)
+        if "prediction" in df.columns:
+            df["prediction_normalized"] = df["prediction"].apply(normalize_arabic_fn)
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

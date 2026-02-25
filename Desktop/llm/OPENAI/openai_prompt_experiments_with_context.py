@@ -237,6 +237,8 @@ class PromptExperimentTesterWithContext(OpenAIArabicTop10Tester):
         df = pd.DataFrame(results)
         if "true_word" in df.columns:
             df["true_word_normalized"] = df["true_word"].apply(_normalize_arabic_cell)
+        if "prediction" in df.columns:
+            df["prediction_normalized"] = df["prediction"].apply(_normalize_arabic_cell)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         base_dir = os.path.dirname(os.path.abspath(__file__))
         suffix = _model_folder_suffix(self.model_name)
@@ -359,22 +361,20 @@ def build_no_context_experiments_for_dataset(
     cluster_examples: Dict[str, Dict[str, object]],
     all_examples: List[Dict[str, str]],
 ) -> List[Dict[str, object]]:
-    """Prompt builders that exclude user metadata from the prompt text."""
-    experiments: List[Dict[str, object]] = []
-    zero_id = "zero_shot" if dataset_label == "arabic" else "no_context_zero_shot_english"
-    all_id = "all_examples" if dataset_label == "arabic" else "no_context_all_examples_english"
-    experiments.append({"experiment_id": zero_id, "prompt_builder": build_zero_shot_prompt_no_context})
+    """Prompt builders that exclude user metadata from the prompt text. IDs aligned with FANAR/Gemini/Claude."""
+    experiments: List[Dict[str, object]] = [
+        {"experiment_id": f"no_context_zero_shot_{dataset_label}", "prompt_builder": build_zero_shot_prompt_no_context},
+    ]
     for slug, cluster_info in cluster_examples.items():
-        exp_id = slug if dataset_label == "arabic" else f"no_context_{slug}_english"
         experiments.append({
-            "experiment_id": exp_id,
+            "experiment_id": f"no_context_{slug}_{dataset_label}",
             "prompt_builder": build_example_prompt_no_context(
                 cluster_info["examples"],
                 include_gloss_in_current_query=True,
             ),
         })
     experiments.append({
-        "experiment_id": all_id,
+        "experiment_id": f"no_context_all_examples_{dataset_label}",
         "prompt_builder": build_example_prompt_no_context(
             all_examples,
             include_gloss_in_current_query=True,
@@ -391,6 +391,8 @@ class PromptExperimentTesterUnified(PromptExperimentTesterWithContext):
         df = pd.DataFrame(results)
         if "true_word" in df.columns:
             df["true_word_normalized"] = df["true_word"].apply(_normalize_arabic_cell)
+        if "prediction" in df.columns:
+            df["prediction_normalized"] = df["prediction"].apply(_normalize_arabic_cell)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         base_dir = os.path.dirname(os.path.abspath(__file__))
         suffix = _model_folder_suffix(self.model_name)
