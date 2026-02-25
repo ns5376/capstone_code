@@ -12,7 +12,7 @@ _PARENT_DIR = os.path.dirname(_CURRENT_DIR)
 if _PARENT_DIR not in sys.path:
     sys.path.insert(0, _PARENT_DIR)
 
-import openai_prompt_experiments_with_context as exp
+import openai_prompt_experiments as exp
 import shared.gloss as shared_gloss
 
 SAMPLE = exp.SAMPLE_SIZE

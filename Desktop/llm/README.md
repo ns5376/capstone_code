@@ -15,10 +15,10 @@ This guide is for someone who needs to run the full experiment suite from scratc
 | Shared utilities | `shared/` (gloss.py, prompts.py, text_utils.py, normalization.py, analysis_utils.py) |
 | **Shared data** | `shared_data/` (see “What data to give them” below) |
 | **Word list (glosses)** | `Word Lists.xlsx` (in the project root) |
-| CLAUDE runner + analysis | `CLAUDE/claude_prompt_experiments_with_context.py`, `CLAUDE/analyze_results.py` |
-| GEMINI runner + analysis | `GEMINI/gemini_prompt_experiments_with_context.py`, `GEMINI/analyze_results.py` |
-| OPENAI runners + analysis | `OPENAI/openai_prompt_experiments_with_context.py`, `OPENAI/run_openai_gpt4o.py`, `OPENAI/run_openai_gpt5.py`, `OPENAI/analyze_results_openai_gpt4o.py`, `OPENAI/analyze_results_openai_gpt5.py` |
-| FANAR runner + analysis | `FANAR/fanar_prompt_experiments_with_context.py`, `FANAR/analyze_results.py` |
+| CLAUDE runner + analysis | `CLAUDE/claude_prompt_experiments.py`, `CLAUDE/analyze_results.py` |
+| GEMINI runner + analysis | `GEMINI/gemini_prompt_experiments.py`, `GEMINI/analyze_results.py` |
+| OPENAI runners + analysis | `OPENAI/openai_prompt_experiments.py`, `OPENAI/run_openai_gpt4o.py`, `OPENAI/run_openai_gpt5.py`, `OPENAI/analyze_results_openai_gpt4o.py`, `OPENAI/analyze_results_openai_gpt5.py` |
+| FANAR runner + analysis | `FANAR/fanar_prompt_experiments.py`, `FANAR/analyze_results.py` |
 
 You can zip the project folder (including `shared`, `shared_data`, `CLAUDE`, `GEMINI`, `OPENAI`, `FANAR`, and `Word Lists.xlsx`) and send that.
 
@@ -206,10 +206,10 @@ You can send them something like this:
 **Run (from project root, capstone_experiments):**
 
 ```bash
-cd CLAUDE   && python claude_prompt_experiments_with_context.py && python analyze_results.py
-cd ../GEMINI && python gemini_prompt_experiments_with_context.py && python analyze_results.py
+cd CLAUDE   && python claude_prompt_experiments.py && python analyze_results.py
+cd ../GEMINI && python gemini_prompt_experiments.py && python analyze_results.py
 cd ../OPENAI && python run_openai_gpt4o.py && python run_openai_gpt5.py && python analyze_results_openai_gpt4o.py && python analyze_results_openai_gpt5.py
-cd ../FANAR  && python fanar_prompt_experiments_with_context.py   && python analyze_results.py
+cd ../FANAR  && python fanar_prompt_experiments.py   && python analyze_results.py
 ```
 
 They will get:
