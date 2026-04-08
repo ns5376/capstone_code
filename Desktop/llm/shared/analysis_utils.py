@@ -68,11 +68,11 @@ def get_shot_type(prompt_id: str) -> str:
         return "c3"
     if "cluster_semitic" in pid or "cluster_afro_asiatic" in pid:
         return "c4"
-    if "cluster_turkic" in pid or "cluster_niger_congo" in pid or "cluster_uralic_turkic" in pid:
+    if "cluster_niger_congo" in pid:
         return "c5"
     if "cluster_sino_tibetan" in pid or "cluster_east_asian" in pid:
         return "c6"
-    if "cluster_other" in pid:
+    if "cluster_turkic" in pid or "cluster_uralic_turkic" in pid:
         return "c7"
     return "unknown"
 
@@ -199,4 +199,3 @@ def calculate_metrics(df: pd.DataFrame, normalization_type: str = "full") -> Dic
         if avg_levenshtein_distances
         else 0.0,
     }
-
